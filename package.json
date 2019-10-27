@@ -1,0 +1,25 @@
+{
+  "name": "kiri",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "author": "SerekKiri",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "cross-env": "^5.2.0",
+    "fastify": "^1.13.3",
+    "nuxt": "^2.0.0",
+    "nuxt-fontawesome": "^0.4.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0",
+    "nodemon": "^1.18.9"
+  }
+}
