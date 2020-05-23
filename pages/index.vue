@@ -19,8 +19,6 @@
   </v-layout>
 </template>
 
-
-
 <script>
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 export default {

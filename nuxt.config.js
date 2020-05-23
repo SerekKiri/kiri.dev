@@ -6,8 +6,8 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    titleTemplate: "Kiri",
-    title: "Kiri",
+    titleTemplate: "Kacper Potyrała",
+    title: "Kacper Potyrała",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
