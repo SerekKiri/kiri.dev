@@ -1,28 +1,28 @@
-const colors = require('vuetify/es5/util/colors').default
+const colors = require("vuetify/es5/util/colors").default;
 
 module.exports = {
-  mode: 'spa',
+  mode: "spa",
   /*
    ** Headers of the page
    */
   head: {
-    titleTemplate: 'Kiri',
-    title: 'Kiri',
+    titleTemplate: "Kiri",
+    title: "Kiri",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        hid: 'Kiri',
-        name: 'Kiri',
-        content: process.env.npm_package_description || ''
+        hid: "Kiri",
+        name: "Kiri",
+        content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: "#fff" },
   /*
    ** Global CSS
    */
@@ -34,29 +34,29 @@ module.exports = {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/vuetify'],
+  buildModules: ["@nuxtjs/vuetify"],
   /*
    ** Nuxt.js modules
    */
   modules: [
-    'nuxt-fontawesome',
-    //OR like this
+    "nuxt-fontawesome",
+
     [
-      'nuxt-fontawesome',
+      "nuxt-fontawesome",
       {
-        component: 'fa',
+        component: "fa",
         imports: [
           //import whole set
           {
-            set: '@fortawesome/free-solid-svg-icons',
-            icons: ['fas']
+            set: "@fortawesome/free-solid-svg-icons",
+            icons: ["fas"]
           },
           //import 2 icons from set
           // please note this is PRO set in this example,
           // you must have it in your node_modules to actually import
           {
-            set: '@fortawesome/pro-regular-svg-icons',
-            icons: ['faAdjust', 'faArchive']
+            set: "@fortawesome/pro-regular-svg-icons",
+            icons: ["faAdjust", "faArchive"]
           }
         ]
       }
@@ -67,7 +67,7 @@ module.exports = {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ["~/assets/variables.scss"],
     theme: {
       themes: {
         dark: {
@@ -91,4 +91,4 @@ module.exports = {
      */
     extend(config, ctx) {}
   }
-}
+};

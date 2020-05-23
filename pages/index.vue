@@ -3,8 +3,8 @@
     <v-flex xs12 sm8 md6>
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h1 class="display-1 font-weight-thin mb-4">Kacper Potyrała</h1>
-          <h3 class="font-weight-thin mb-4">contact@kiri.dev</h3>
+          <h1 class="display-1 font-weight-light mb-4">Kacper Potyrała</h1>
+          <h3 class="font-weight-light headline mb-4">Contact via:</h3>
           <v-row justify="center">
             <v-btn text icon large class="mr-2" href="https://github.com/SerekKiri">
               <font-awesome-icon class="fa-3x" :icon="faGithub" />
