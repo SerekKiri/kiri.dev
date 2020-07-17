@@ -1,8 +1,19 @@
 <template>
   <v-app>
-    <h1 v-if="error.statusCode === 404">{{ pageNotFound }}</h1>
-    <h1 v-else>{{ otherError }}</h1>
-    <NuxtLink to="/">Home page</NuxtLink>
+    <v-layout column justify-center align-center>
+      <v-flex xs12 sm8 md6>
+        <v-row align="center" justify="center">
+          <v-col class="text-center" cols="12">
+            <h1
+              class="display-1 font-weight-light"
+              v-if="error.statusCode === 404"
+            >{{ pageNotFound }}</h1>
+            <h1 v-else>{{ otherError }}</h1>
+            <NuxtLink class="title" style="text-decoration: none;" to="/">Home page</NuxtLink>
+          </v-col>
+        </v-row>
+      </v-flex>
+    </v-layout>
   </v-app>
 </template>
 

@@ -40,7 +40,12 @@ module.exports = {
    */
   modules: [
     "nuxt-fontawesome",
-
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-130735267-2"
+      }
+    ],
     [
       "nuxt-fontawesome",
       {
