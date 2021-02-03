@@ -90,3 +90,12 @@ sw.*
 *.swp
 
 public/
+build
+.github
+
+# Firebase Hosting
+.firebaserc
+/.firebase
+.firebase
+firebase.json
+firebase-debug.log
