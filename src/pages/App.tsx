@@ -1,20 +1,25 @@
 import React from 'react'
 
-// Styles
-import { Wrapper } from './styles'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom"
 
 // Components
-import { Name } from 'components/name'
-import { Links } from 'components/links'
-import { Description } from 'components/description'
+import { Home } from './home'
+import { ProjectPage } from './projects/[name]'
+import { Projects } from './projects'
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <Wrapper>
-      <Name />
-      <Description />
-      <Links />
-    </Wrapper>
+    <Router>
+      <Switch>
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/projects/:year/:name" component={ProjectPage} />
+        <Route path="*" component={Home} />
+      </Switch>
+    </Router>
   )
 }
 

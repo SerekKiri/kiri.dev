@@ -8,6 +8,7 @@ const Links = () => {
         <Wrapper>
             <Link href="https://github.com/SerekKiri">Github</Link>
             <Link href="https://www.linkedin.com/in/kiri">Linkedin</Link>
+            <Link href="/projects">Open source projects</Link>
         </Wrapper>
     )
 }
