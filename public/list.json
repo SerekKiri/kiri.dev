@@ -96,7 +96,7 @@
             },
             {
                 "name": "Genevi",
-                "description": "Discord bot build in javascript that allowed discord users to fetch posts directly from wykop.pl.",
+                "description": "Supposed to be a CV generator that became a markdown formatter (kind of). Build with react.",
                 "screenshot": "genevi",
                 "github": "https://github.com/SerekKiri/Genevi"
             }
