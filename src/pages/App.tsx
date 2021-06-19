@@ -1,25 +1,28 @@
 import React from 'react'
-
 import {
-  BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from "react-router-dom"
 
 // Components
 import { Home } from './home'
-import { ProjectPage } from './projects/[name]'
 import { Projects } from './projects'
+import { ProjectPage } from './projects/[name]'
+
+// Google Analytics
+import { useGATracker } from '../gaTracker'
 
 const App: React.FC = () => {
+
+  // Use Google Analytics tracking
+  useGATracker()
+
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/projects" component={Projects} />
-        <Route exact path="/projects/:year/:name" component={ProjectPage} />
-        <Route path="*" component={Home} />
-      </Switch>
-    </Router>
+    <Switch>
+      <Route exact path="/projects" component={Projects} />
+      <Route exact path="/projects/:year/:name" component={ProjectPage} />
+      <Route path="*" component={Home} />
+    </Switch>
   )
 }
 
