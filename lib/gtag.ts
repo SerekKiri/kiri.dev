@@ -1,4 +1,4 @@
-export const GA_TRACKING_ID = process.env.GA_TRACKING_ID;
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 
 declare global {
   interface Window { gtag: any; }
@@ -6,7 +6,6 @@ declare global {
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
-  console.log(GA_TRACKING_ID, process.env)
   if (!GA_TRACKING_ID) return console.error('No GA Tracking Code found :(')
   window.gtag("config", GA_TRACKING_ID, {
     page_path: url,
