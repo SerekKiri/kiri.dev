@@ -11,10 +11,14 @@ const Home: NextPage = () => {
       <Head>
         <title>Kacper Potyrała</title>
         <meta name="description" content="21 years old software enginner based in Poland" />
+        <meta property="og:title" content="Kacper Potyrała - Space Inside" />
+        <meta property="og:image" content="https://kiri.dev/image.jpg" />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:creator" content="kapotyrala" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className={styles.navigation}>  
+      <nav className={styles.navigation}>
         <IconContext.Provider value={{ className: styles.navigationIcon }}>
           <SiSpacex size={50} />
         </IconContext.Provider>
