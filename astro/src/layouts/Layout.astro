@@ -1,0 +1,43 @@
+---
+import GoogleAnalytics from '../lib/GoogleAnalytics.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Kacper Potyrała</title>
+        <meta name="description" content="21 years old software enginner based in Poland" />
+        <meta property="og:title" content="Kacper Potyrała - Space Inside" />
+        <meta property="og:image" content="https://kiri.dev/image.jpg" />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:creator" content="kapotyrala" />
+        <link rel="icon" href="/favicon.ico" />
+
+		<GoogleAnalytics />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+</style>
