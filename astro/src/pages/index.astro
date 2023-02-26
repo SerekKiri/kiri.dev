@@ -1,118 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-const calculateMyAge = () => {
-	const ageDifMs = Date.now() - new Date(import.meta.env.BIRTH_DATE).getTime();
-  const ageDate = new Date(ageDifMs);
-  return Math.abs(ageDate.getUTCFullYear() - 1970);
-}
+// Components
+import Header from "../components/Header.astro";
+import Main from "../components/Main.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-	<div class="container">
-		<nav class="navigation">
-			<img src="/icons/spacex.svg" class="navigation-icon spacex-icon" alt="Spacex Icon" />
-			<div class="navigation-links">
-				<a href="https://github.com/SerekKiri" class="navigation-link">
-					<img src="/icons/github.svg" class="navigation-icon" alt="Github icon" />
-				</a>
-				<a href="https://twitter.com/kapotyrala" class="navigation-link">
-					<img src="/icons/twitter.svg" class="navigation-icon" alt="Twitter icon" />
-				</a>
-				<a href="https://www.linkedin.com/in/kiri" class="navigation-link">
-					<img src="/icons/linkedin.svg" class="navigation-icon" alt="Linkedin icon" />
-				</a>
-			</div>
-		</nav>
-
-		<main>
-			<h1 class="title">
-				Kacper Potyrała
-			</h1>
-			<p class="description">
-				{calculateMyAge()} y.o. software engineer 
-			</p>
-			<div class="tech-stack">
-				<img src="/icons/astro.svg" class="navigation-icon" alt="Astro icon" />
-				<img src="/icons/react.svg" class="navigation-icon" alt="React icon" />
-				<img src="/icons/nextdotjs.svg" class="navigation-icon" alt="Nextjs icon" />
-				<img src="/icons/nestjs.svg" class="navigation-icon" alt="Nestjs icon" />
-				<img src="/icons/vuedotjs.svg" class="navigation-icon" alt="Vuejs icon" />
-				<img src="/icons/nuxtdotjs.svg" class="navigation-icon" alt="Nuxtjs icon" />
-				<img src="/icons/rust.svg" class="navigation-icon" alt="Rust icon" />
-			</div>
-		</main>
-	</div>
+  <Header />
+  <Main />
+  <Footer />
 </Layout>
 
 <style>
-.container {
-	background-color: #D9AFD9;
-  background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
-}
-.navigation {
-  top: 0;
-  width: 100%;
-  display: flex;
-  color: #191D20;
-	padding: 0 1.2rem;
-  position: absolute;
-  align-items: center;
-}
-.navigation-icon {
-  color: #191D20;
-  margin-left: .4rem;
-	width: 20px;
-	height: 20px;
-}
-.spacex-icon {
-	width: 50px;
-	height: auto;
-	margin-left: 0;
-}
-.navigation-links {
-  display: flex;
-  margin-left: auto;
-}
-.navigation-link {
-  display: flex;
-  margin: 0 0.4rem;
-  position: relative;
-  align-items: center;
-}
-main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.title {
-  margin: 0;
-  line-height: 1.3;
-  font-size: 4rem;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.title,
-.description {
-  color: #191D20;
-  text-align: center;
-}
-.description {
-  margin: 0.4rem 0 0.8rem;
-  line-height: 1.2;
-  font-size: 1.5rem;
-}
-.tech-stack {
-  display: flex;
-}
-.tech-stack img {
-  margin: 0 .4rem;
-}
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 </style>

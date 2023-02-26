@@ -1,0 +1,26 @@
+---
+import Skills from "./Skills.astro";
+import Experience from "./Experience.astro";
+---
+
+<main>
+  <Skills />
+  <Experience />
+</main>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6em;
+    margin: calc(1em + 1ex) 0;
+  }
+
+  @media (max-width: 800px) {
+    main {
+      gap: 0;
+      margin: 1em 0;
+    }
+  }
+</style>
