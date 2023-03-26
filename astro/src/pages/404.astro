@@ -1,0 +1,44 @@
+---
+import GoogleAnalytics from "../lib/GoogleAnalytics.astro"
+---
+
+<div class="not-found">
+  <h2>Page not found</h2>
+  <a href="/">Go back to home</a>
+
+  <GoogleAnalytics />
+</div>
+
+<style>
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .not-found {
+    width: 100%;
+    color: white;
+    height: 100vh;
+    display: flex;
+    background: black;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: white;
+    margin-top: 6px;
+  }
+</style>

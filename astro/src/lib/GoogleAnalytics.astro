@@ -1,20 +1,25 @@
 ---
 export interface Props {
-  partytown?: boolean;
+  partytown?: boolean
 }
 
 const id = import.meta.env.GA_TRACKING_ID
-const { partytown = false } = Astro.props;
-const attrs = partytown ? { type: "text/partytown" } : {};
+const { partytown = false } = Astro.props
+const attrs = partytown ? { type: "text/partytown" } : {}
 ---
 
-<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} {...attrs}></script>
+<script
+  is:inline
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
+  {...attrs}
+></script>
 
 <script is:inline define:vars={{ id }} {...attrs}>
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || []
   function gtag() {
-    window.dataLayer.push(arguments);
+    window.dataLayer.push(arguments)
   }
-  gtag("js", new Date());
-  gtag("config", id);
+  gtag("js", new Date())
+  gtag("config", id)
 </script>
