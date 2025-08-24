@@ -1,9 +1,58 @@
 ---
 import Name from "./Name.astro"
 import Contact from "./Contact.astro"
+import ProfileImage from "./ProfileImage.astro"
 ---
 
-<header>
-  <Name />
-  <Contact />
+<header class="header-container">
+  <div class="header-content">
+    <div class="header-left">
+      <Name />
+      <Contact />
+    </div>
+    <div class="header-right">
+      <ProfileImage />
+    </div>
+  </div>
 </header>
+
+<style>
+  .header-container {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .header-left {
+    flex: 1;
+  }
+
+  .header-right {
+    flex-shrink: 0;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .header-left {
+      order: 2;
+    }
+
+    .header-right {
+      order: 1;
+    }
+  }
+</style>
