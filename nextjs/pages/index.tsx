@@ -28,7 +28,7 @@ const Home: NextPage = () => {
               <FaGithub size={22} />
             </IconContext.Provider>
           </a>
-          <a href="https://twitter.com/kapotyrala" className={styles.navigationLink}>
+          <a href="https://x.com/kapotyrala" className={styles.navigationLink}>
             <IconContext.Provider value={{ style: { marginLeft: '0.4rem' } }}>
               <FaTwitter size={22} />
             </IconContext.Provider>
