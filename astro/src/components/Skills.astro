@@ -282,76 +282,46 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const showMoreBtn = document.getElementById(
-      "showMoreBtn"
-    ) as HTMLElement | null
-    const allStoryImages = document.querySelectorAll(".story-image")
+    const showMoreBtn = document.getElementById("showMoreBtn")
+    const hiddenImages = document.querySelectorAll(".story-image-hidden")
     let isExpanded = false
 
-    if (!showMoreBtn) {
-      console.warn("Show more button not found")
-      return
-    }
+    if (!showMoreBtn) return
 
-    // Function to hide/show images based on screen size and expanded state
-    function updateImageVisibility() {
-      const isMobile = window.innerWidth <= 1000
-
+    // Show/hide button based on screen size
+    function updateButtonVisibility() {
       if (!showMoreBtn) return
 
-      if (!isMobile) {
-        // Desktop - show all images
-        allStoryImages.forEach((img) => {
-          img.classList.remove("story-image-hidden")
-        })
-        showMoreBtn.style.display = "none"
-      } else {
-        // Mobile/Tablet - show button and manage visibility
+      if (window.innerWidth <= 1000) {
         showMoreBtn.style.display = "block"
-
-        if (isExpanded) {
-          // Show all images
-          allStoryImages.forEach((img) => {
-            img.classList.remove("story-image-hidden")
-          })
-          showMoreBtn.textContent = "Show Less"
-        } else {
-          // Hide images beyond the limit (CSS will handle the rest)
-          allStoryImages.forEach((img, index) => {
-            if (window.innerWidth <= 480) {
-              // Mobile: show only first 2
-              if (index >= 2) {
-                img.classList.add("story-image-hidden")
-              } else {
-                img.classList.remove("story-image-hidden")
-              }
-            } else {
-              // Tablet: show only first 3
-              if (index >= 3) {
-                img.classList.add("story-image-hidden")
-              } else {
-                img.classList.remove("story-image-hidden")
-              }
-            }
-          })
-          showMoreBtn.textContent = "Show More Stories"
-        }
+      } else {
+        showMoreBtn.style.display = "none"
+        // Show all images on desktop
+        hiddenImages.forEach((img) =>
+          img.classList.remove("story-image-hidden")
+        )
       }
     }
 
-    // Toggle visibility of hidden images
+    // Toggle images
     showMoreBtn.addEventListener("click", function () {
       isExpanded = !isExpanded
-      updateImageVisibility()
+
+      if (isExpanded) {
+        hiddenImages.forEach((img) =>
+          img.classList.remove("story-image-hidden")
+        )
+        showMoreBtn.textContent = "Show Less"
+      } else {
+        hiddenImages.forEach((img) => img.classList.add("story-image-hidden"))
+        showMoreBtn.textContent = "Show More Stories"
+      }
     })
 
-    // Update image visibility on window resize
-    window.addEventListener("resize", function () {
-      isExpanded = false // Reset to collapsed state on resize
-      updateImageVisibility()
-    })
+    // Update on resize
+    window.addEventListener("resize", updateButtonVisibility)
 
     // Initial setup
-    updateImageVisibility()
+    updateButtonVisibility()
   })
 </script>
