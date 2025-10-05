@@ -44,3 +44,7 @@ yarn-error.log*
 
 # cursor editor
 .cursor
+
+# astro build and cache
+astro/.astro/
+astro/dist/

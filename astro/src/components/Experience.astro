@@ -1,3 +1,19 @@
+---
+import { Image } from "astro:assets"
+import flareFact1 from "../images/FlareFact-1.jpeg"
+import flareFact2 from "../images/FlareFact-2.jpeg"
+import blazity1 from "../images/Blazity-1.jpg"
+import blazity2 from "../images/Blazity-2.jpeg"
+import blazity3 from "../images/Blazity-3.jpg"
+import spaceTeam1 from "../images/SpaceTeam-1.jpeg"
+import spaceTeam2 from "../images/SpaceTeam-2.jpeg"
+import spaceTeam3 from "../images/SpaceTeam-3.jpeg"
+import unikie1 from "../images/Unikie-1.jpg"
+import digitalColliers1 from "../images/digital-colliers-1.jpg"
+import digitalColliers2 from "../images/digital-colliers-2.jpg"
+import asasak1 from "../images/Asasak-1.jpg"
+---
+
 <article class="experience">
   <h2>Experience</h2>
 
@@ -15,18 +31,18 @@
       >.
     </p>
     <div class="company-gallery">
-      <img
-        src="/FlareFact-1.jpeg"
+      <Image
+        src={flareFact1}
         alt="Quick call with the team in Dubai"
         class="company-image"
-        data-modal-src="/FlareFact-1.jpeg"
+        data-modal-src="/src/images/FlareFact-1.jpeg"
         data-modal-alt="Quick call with the team in Dubai"
       />
-      <img
-        src="/FlareFact-2.jpeg"
+      <Image
+        src={flareFact2}
         alt="FlareFact Trip to Waterloo"
         class="company-image"
-        data-modal-src="/FlareFact-2.jpeg"
+        data-modal-src="/src/images/FlareFact-2.jpeg"
         data-modal-alt="FlareFact Trip to Waterloo"
       />
     </div>
@@ -54,25 +70,25 @@
       source portfolio of the company and helping with Developer relations.
     </p>
     <div class="company-gallery">
-      <img
-        src="/Blazity-1.jpg"
+      <Image
+        src={blazity1}
         alt="Blazity team gathering"
         class="company-image"
-        data-modal-src="/Blazity-1.jpg"
+        data-modal-src="/src/images/Blazity-1.jpg"
         data-modal-alt="Blazity team gathering"
       />
-      <img
-        src="/Blazity-2.jpeg"
+      <Image
+        src={blazity2}
         alt="Arthur AI team breakfast in New York Office"
         class="company-image"
-        data-modal-src="/Blazity-2.jpeg"
+        data-modal-src="/src/images/Blazity-2.jpeg"
         data-modal-alt="Arthur AI team breakfast in New York Office"
       />
-      <img
-        src="/Blazity-3.JPG"
+      <Image
+        src={blazity3}
         alt="Arthur AI team selfie during a city game in New York"
         class="company-image"
-        data-modal-src="/Blazity-3.JPG"
+        data-modal-src="/src/images/Blazity-3.JPG"
         data-modal-alt="Arthur AI team selfie during a city game in New York"
       />
     </div>
@@ -95,25 +111,25 @@
       on daily basis.
     </p>
     <div class="company-gallery">
-      <img
-        src="/SpaceTeam-1.jpeg"
+      <Image
+        src={spaceTeam1}
         alt="SpaceTeam Christmas Card with our machine in the lab"
         class="company-image"
-        data-modal-src="/SpaceTeam-1.jpeg"
+        data-modal-src="/src/images/SpaceTeam-1.jpeg"
         data-modal-alt="SpaceTeam Christmas Card with our machine in the lab"
       />
-      <img
-        src="/SpaceTeam-2.jpeg"
+      <Image
+        src={spaceTeam2}
         alt="Rover!"
         class="company-image"
-        data-modal-src="/SpaceTeam-2.jpeg"
+        data-modal-src="/src/images/SpaceTeam-2.jpeg"
         data-modal-alt="Rover!"
       />
-      <img
-        src="/SpaceTeam-3.jpeg"
+      <Image
+        src={spaceTeam3}
         alt="SpaceTeam workshop environment"
         class="company-image"
-        data-modal-src="/SpaceTeam-3.jpeg"
+        data-modal-src="/src/images/SpaceTeam-3.jpeg"
         data-modal-alt="SpaceTeam workshop environment"
       />
     </div>
@@ -134,11 +150,11 @@
       > R&D department to work on their new product, building it basically from scratch.
     </p>
     <div class="company-gallery">
-      <img
-        src="/Unikie-1.JPG"
+      <Image
+        src={unikie1}
         alt="Unikie team during a break"
         class="company-image"
-        data-modal-src="/Unikie-1.JPG"
+        data-modal-src="/src/images/Unikie-1.JPG"
         data-modal-alt="Unikie team during a break"
       />
     </div>
@@ -162,18 +178,18 @@
       across the company based on my experiences.
     </p>
     <div class="company-gallery">
-      <img
-        src="/digital-colliers-1.jpg"
+      <Image
+        src={digitalColliers1}
         alt="Digital Colliers team in Zakopane"
         class="company-image"
-        data-modal-src="/digital-colliers-1.jpg"
+        data-modal-src="/src/images/digital-colliers-1.jpg"
         data-modal-alt="Digital Colliers team in Zakopane"
       />
-      <img
-        src="/digital-colliers-2.jpg"
+      <Image
+        src={digitalColliers2}
         alt="Digital Colliers team in Hamburg"
         class="company-image"
-        data-modal-src="/digital-colliers-2.jpg"
+        data-modal-src="/src/images/digital-colliers-2.jpg"
         data-modal-alt="Digital Colliers team in Hamburg"
       />
     </div>
@@ -193,11 +209,11 @@
       alongside backend, while also managing all of the infrastructure.
     </p>
     <div class="company-gallery">
-      <img
-        src="/Asasak-1.jpg"
+      <Image
+        src={asasak1}
         alt="Cabines delivered to a customer thanks to our software"
         class="company-image"
-        data-modal-src="/Asasak-1.jpg"
+        data-modal-src="/src/images/Asasak-1.jpg"
         data-modal-alt="Cabines delivered to a customer thanks to our software"
       />
     </div>
@@ -276,6 +292,24 @@
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  .company-image.loaded {
+    background: none;
+    animation: none;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
 
   .company-image:hover {
@@ -490,14 +524,13 @@
     const closeBtn = document.querySelector(
       ".modal-close"
     ) as HTMLElement | null
-    const companyImages = document.querySelectorAll(".company-image")
-
     if (!modal || !modalImg || !modalCaption || !closeBtn) {
       console.warn("Modal elements not found")
       return
     }
 
     // Open modal when image is clicked
+    const companyImages = document.querySelectorAll(".company-image")
     companyImages.forEach((img) => {
       img.addEventListener("click", function (this: HTMLElement) {
         const src = this.getAttribute("data-modal-src")
@@ -544,6 +577,13 @@
     modalImg.addEventListener("error", function (this: HTMLImageElement) {
       console.warn("Failed to load image:", this.src)
       closeModal()
+    })
+
+    // Handle skeleton loading for company images
+    companyImages.forEach((img) => {
+      img.addEventListener("load", function (this: HTMLImageElement) {
+        this.classList.add("loaded")
+      })
     })
   })
 </script>

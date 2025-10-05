@@ -1,14 +1,19 @@
+---
+import { Image } from "astro:assets"
+import astroIcon from "/public/icons/astro.svg"
+---
+
 <footer>
   <p>© 2001 Kacper Potyrała</p>
   <p>
     Built with &hearts; and
     <a href="https://astro.build/"
-      ><img
-        src="/icons/astro.svg"
+      ><Image
+        src={astroIcon}
         class="navigation-icon"
-        alt="Github icon"
-        width="20"
-        height="20"
+        alt="Astro icon"
+        width={20}
+        height={20}
       />Astro</a
     >
   </p>

@@ -1,3 +1,19 @@
+---
+import { Image } from "astro:assets"
+import story1 from "../images/story/Story-1.jpg"
+import story2 from "../images/story/Story-2.jpg"
+import story3 from "../images/story/Story-3.jpeg"
+import story4 from "../images/story/Story-4.jpg"
+import story5 from "../images/story/Story-5.jpg"
+import story6 from "../images/story/Story-6.jpg"
+import story7 from "../images/story/Story-7.jpg"
+import story8 from "../images/story/Story-8.jpg"
+import story9 from "../images/story/Story-9.jpg"
+import story10 from "../images/story/Story-10.jpg"
+import story11 from "../images/story/Story-11.jpg"
+import story12 from "../images/story/Story-12.jpeg"
+---
+
 <article>
   <h2>Skills</h2>
 
@@ -38,88 +54,88 @@
   </section>
 
   <div class="company-gallery">
-    <img
-      src="/story/Story-1.jpg"
+    <Image
+      src={story1}
       alt="Waterloo squad"
       class="company-image story-image"
-      data-modal-src="/story/Story-1.jpg"
+      data-modal-src="/src/images/story/Story-1.jpg"
       data-modal-alt="Waterloo squad"
     />
-    <img
-      src="/story/Story-2.jpg"
+    <Image
+      src={story2}
       alt="Posing at Junction Hackathon in Helsinki after a win"
       class="company-image story-image"
-      data-modal-src="/story/Story-2.jpg"
+      data-modal-src="/src/images/story/Story-2.jpg"
       data-modal-alt="Posing at Junction Hackathon in Helsinki after a win"
     />
-    <img
-      src="/story/Story-3.jpeg"
+    <Image
+      src={story3}
       alt="HackYeah Kraków"
       class="company-image story-image"
-      data-modal-src="/story/Story-3.jpeg"
+      data-modal-src="/src/images/story/Story-3.jpeg"
       data-modal-alt="HackYeah Kraków"
     />
-    <img
-      src="/story/Story-4.jpg"
+    <Image
+      src={story4}
       alt="HackYeah on stage with a prize"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-4.jpg"
+      data-modal-src="/src/images/story/Story-4.jpg"
       data-modal-alt="HackYeah on stage with a prize"
     />
-    <img
-      src="/story/Story-5.jpg"
+    <Image
+      src={story5}
       alt="Legendary Hackeah team"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-5.jpg"
+      data-modal-src="/src/images/story/Story-5.jpg"
       data-modal-alt="Legendary Hackeah team"
     />
-    <img
-      src="/story/Story-6.jpg"
+    <Image
+      src={story6}
       alt="Hackyeah with the prime minister"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-6.jpg"
+      data-modal-src="/src/images/story/Story-6.jpg"
       data-modal-alt="Hackyeah with the prime minister"
     />
-    <img
-      src="/story/Story-7.jpg"
+    <Image
+      src={story7}
       alt="Break for minecraft"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-7.jpg"
+      data-modal-src="/src/images/story/Story-7.jpg"
       data-modal-alt="Break for minecraft"
     />
-    <img
-      src="/story/Story-8.jpg"
+    <Image
+      src={story8}
       alt="Coding Session"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-8.jpg"
+      data-modal-src="/src/images/story/Story-8.jpg"
       data-modal-alt="Coding Session"
     />
-    <img
-      src="/story/Story-9.jpg"
+    <Image
+      src={story9}
       alt="My first hackathon"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-9.jpg"
+      data-modal-src="/src/images/story/Story-9.jpg"
       data-modal-alt="My first hackathon"
     />
-    <img
-      src="/story/Story-10.jpg"
+    <Image
+      src={story10}
       alt="Our bread friend at asseco hackathon"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-10.jpg"
+      data-modal-src="/src/images/story/Story-10.jpg"
       data-modal-alt="Our bread friend at asseco hackathon"
     />
-    <img
-      src="/story/Story-11.JPG"
+    <Image
+      src={story11}
       alt="Waterloo Squad waiting for food"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-11.JPG"
+      data-modal-src="/src/images/story/Story-11.JPG"
       data-modal-alt="Waterloo Squad waiting for food"
     />
-    <img
-      src="/story/Story-12.jpeg"
+    <Image
+      src={story12}
       alt="Armenia Team Visit"
       class="company-image story-image story-image-hidden"
-      data-modal-src="/story/Story-12.jpeg"
+      data-modal-src="/src/images/story/Story-12.jpeg"
       data-modal-alt="Armenia Team Visit"
     />
   </div>
@@ -167,6 +183,24 @@
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  .company-image.loaded {
+    background: none;
+    animation: none;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
 
   .story-image-hidden {
@@ -323,5 +357,13 @@
 
     // Initial setup
     updateButtonVisibility()
+
+    // Handle skeleton loading for story images
+    const storyImages = document.querySelectorAll(".company-image")
+    storyImages.forEach((img) => {
+      img.addEventListener("load", function (this: HTMLImageElement) {
+        this.classList.add("loaded")
+      })
+    })
   })
 </script>

@@ -1,10 +1,14 @@
-<img
-  src="/profile.jpeg"
-  srcset="/profile.jpeg 1x, /profile@2x.jpeg 2x"
+---
+import { Image } from "astro:assets"
+import profileImage from "/public/profile.jpeg"
+---
+
+<Image
+  src={profileImage}
   alt="Profile photo"
   class="profile-image"
-  width="120"
-  height="120"
+  width={120}
+  height={120}
 />
 
 <style>
@@ -23,6 +27,24 @@
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease-in-out;
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  .profile-image.loaded {
+    background: none;
+    animation: none;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
 
   .profile-image:hover {
@@ -48,3 +70,14 @@
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const profileImage = document.querySelector(".profile-image")
+    if (profileImage) {
+      profileImage.addEventListener("load", function (this: HTMLImageElement) {
+        this.classList.add("loaded")
+      })
+    }
+  })
+</script>
