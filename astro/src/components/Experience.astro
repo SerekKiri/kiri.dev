@@ -35,14 +35,12 @@ import asasak1 from "../images/Asasak-1.jpg"
         src={flareFact1}
         alt="Quick call with the team in Dubai"
         class="company-image"
-        data-modal-src={flareFact1.src}
         data-modal-alt="Quick call with the team in Dubai"
       />
       <Image
         src={flareFact2}
         alt="FlareFact Trip to Waterloo"
         class="company-image"
-        data-modal-src={flareFact2.src}
         data-modal-alt="FlareFact Trip to Waterloo"
       />
     </div>
@@ -74,21 +72,18 @@ import asasak1 from "../images/Asasak-1.jpg"
         src={blazity1}
         alt="Blazity team gathering"
         class="company-image"
-        data-modal-src={blazity1.src}
         data-modal-alt="Blazity team gathering"
       />
       <Image
         src={blazity2}
         alt="Arthur AI team breakfast in New York Office"
         class="company-image"
-        data-modal-src={blazity2.src}
         data-modal-alt="Arthur AI team breakfast in New York Office"
       />
       <Image
         src={blazity3}
         alt="Arthur AI team selfie during a city game in New York"
         class="company-image"
-        data-modal-src={blazity3.src}
         data-modal-alt="Arthur AI team selfie during a city game in New York"
       />
     </div>
@@ -115,21 +110,18 @@ import asasak1 from "../images/Asasak-1.jpg"
         src={spaceTeam1}
         alt="SpaceTeam Christmas Card with our machine in the lab"
         class="company-image"
-        data-modal-src={spaceTeam1.src}
         data-modal-alt="SpaceTeam Christmas Card with our machine in the lab"
       />
       <Image
         src={spaceTeam2}
         alt="Rover!"
         class="company-image"
-        data-modal-src={spaceTeam2.src}
         data-modal-alt="Rover!"
       />
       <Image
         src={spaceTeam3}
         alt="SpaceTeam workshop environment"
         class="company-image"
-        data-modal-src={spaceTeam3.src}
         data-modal-alt="SpaceTeam workshop environment"
       />
     </div>
@@ -154,7 +146,6 @@ import asasak1 from "../images/Asasak-1.jpg"
         src={unikie1}
         alt="Unikie team during a break"
         class="company-image"
-        data-modal-src={unikie1.src}
         data-modal-alt="Unikie team during a break"
       />
     </div>
@@ -182,14 +173,12 @@ import asasak1 from "../images/Asasak-1.jpg"
         src={digitalColliers1}
         alt="Digital Colliers team in Zakopane"
         class="company-image"
-        data-modal-src={digitalColliers1.src}
         data-modal-alt="Digital Colliers team in Zakopane"
       />
       <Image
         src={digitalColliers2}
         alt="Digital Colliers team in Hamburg"
         class="company-image"
-        data-modal-src={digitalColliers2.src}
         data-modal-alt="Digital Colliers team in Hamburg"
       />
     </div>
@@ -213,7 +202,6 @@ import asasak1 from "../images/Asasak-1.jpg"
         src={asasak1}
         alt="Cabines delivered to a customer thanks to our software"
         class="company-image"
-        data-modal-src={asasak1.src}
         data-modal-alt="Cabines delivered to a customer thanks to our software"
       />
     </div>
@@ -532,13 +520,14 @@ import asasak1 from "../images/Asasak-1.jpg"
     // Open modal when image is clicked
     const companyImages = document.querySelectorAll(".company-image")
     companyImages.forEach((img) => {
-      img.addEventListener("click", function (this: HTMLElement) {
-        const src = this.getAttribute("data-modal-src")
+      img.addEventListener("click", function (this: HTMLImageElement) {
         const alt = this.getAttribute("data-modal-alt")
 
-        if (src && alt) {
+        if (alt) {
           modal.classList.add("show")
-          modalImg.src = src
+
+          // Use the already-loaded image data instead of making a new request
+          modalImg.src = this.src
           modalImg.alt = alt
           modalCaption.textContent = alt
 
