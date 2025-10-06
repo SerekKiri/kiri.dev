@@ -7,10 +7,11 @@ import profileImage from "/public/profile.jpeg"
   src={profileImage}
   alt="Profile photo"
   class="profile-image"
-  width={120}
-  height={120}
+  width={240}
+  height={240}
   quality={100}
   format="webp"
+  loading="eager"
 />
 
 <style>
@@ -19,10 +20,11 @@ import profileImage from "/public/profile.jpeg"
     object-fit: cover;
     object-position: center;
     transform: scale(1);
-    image-rendering: auto;
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    transform: translateZ(0);
     border: 3px solid #e5e7eb;
     box-shadow:
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -52,11 +54,23 @@ import profileImage from "/public/profile.jpeg"
     transform: scale(1.25);
   }
 
+  /* Safari-specific optimizations */
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .profile-image {
+      image-rendering: -webkit-optimize-contrast;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
   /* Responsive design */
   @media (max-width: 768px) {
     .profile-image {
       width: 150px;
       height: 150px;
+      image-rendering: -webkit-optimize-contrast;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
     }
 
     .profile-image:hover {
@@ -68,6 +82,9 @@ import profileImage from "/public/profile.jpeg"
     .profile-image {
       width: 180px;
       height: 180px;
+      image-rendering: -webkit-optimize-contrast;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
     }
   }
 </style>
