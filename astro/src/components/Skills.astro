@@ -59,72 +59,132 @@ import story12 from "../images/story/Story-12.jpeg"
       alt="Waterloo squad"
       class="company-image story-image"
       data-modal-alt="Waterloo squad"
+      data-original-src={story1.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story2}
       alt="Posing at Junction Hackathon in Helsinki after a win"
       class="company-image story-image"
       data-modal-alt="Posing at Junction Hackathon in Helsinki after a win"
+      data-original-src={story2.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story3}
       alt="HackYeah Kraków"
       class="company-image story-image"
       data-modal-alt="HackYeah Kraków"
+      data-original-src={story3.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story4}
       alt="HackYeah on stage with a prize"
       class="company-image story-image story-image-hidden"
       data-modal-alt="HackYeah on stage with a prize"
+      data-original-src={story4.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story5}
       alt="Legendary Hackeah team"
       class="company-image story-image story-image-hidden"
       data-modal-alt="Legendary Hackeah team"
+      data-original-src={story5.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story6}
       alt="Hackyeah with the prime minister"
       class="company-image story-image story-image-hidden"
       data-modal-alt="Hackyeah with the prime minister"
+      data-original-src={story6.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story7}
       alt="Break for minecraft"
       class="company-image story-image story-image-hidden"
       data-modal-alt="Break for minecraft"
+      data-original-src={story7.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story8}
       alt="Coding Session"
       class="company-image story-image story-image-hidden"
       data-modal-alt="Coding Session"
+      data-original-src={story8.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story9}
       alt="My first hackathon"
       class="company-image story-image story-image-hidden"
       data-modal-alt="My first hackathon"
+      data-original-src={story9.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story10}
       alt="Our bread friend at asseco hackathon"
       class="company-image story-image story-image-hidden"
       data-modal-alt="Our bread friend at asseco hackathon"
+      data-original-src={story10.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story11}
       alt="Waterloo Squad waiting for food"
       class="company-image story-image story-image-hidden"
       data-modal-alt="Waterloo Squad waiting for food"
+      data-original-src={story11.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
     <Image
       src={story12}
       alt="Armenia Team Visit"
       class="company-image story-image story-image-hidden"
       data-modal-alt="Armenia Team Visit"
+      data-original-src={story12.src}
+      width={300}
+      height={200}
+      quality={85}
+      format="webp"
     />
   </div>
 
@@ -175,6 +235,10 @@ import story12 from "../images/story/Story-12.jpeg"
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s infinite;
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 
   .company-image.loaded {

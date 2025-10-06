@@ -36,12 +36,22 @@ import asasak1 from "../images/Asasak-1.jpg"
         alt="Quick call with the team in Dubai"
         class="company-image"
         data-modal-alt="Quick call with the team in Dubai"
+        data-original-src={flareFact1.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
       <Image
         src={flareFact2}
         alt="FlareFact Trip to Waterloo"
         class="company-image"
         data-modal-alt="FlareFact Trip to Waterloo"
+        data-original-src={flareFact2.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
     </div>
   </section>
@@ -73,18 +83,33 @@ import asasak1 from "../images/Asasak-1.jpg"
         alt="Blazity team gathering"
         class="company-image"
         data-modal-alt="Blazity team gathering"
+        data-original-src={blazity1.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
       <Image
         src={blazity2}
         alt="Arthur AI team breakfast in New York Office"
         class="company-image"
         data-modal-alt="Arthur AI team breakfast in New York Office"
+        data-original-src={blazity2.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
       <Image
         src={blazity3}
         alt="Arthur AI team selfie during a city game in New York"
         class="company-image"
         data-modal-alt="Arthur AI team selfie during a city game in New York"
+        data-original-src={blazity3.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
     </div>
   </section>
@@ -111,18 +136,33 @@ import asasak1 from "../images/Asasak-1.jpg"
         alt="SpaceTeam Christmas Card with our machine in the lab"
         class="company-image"
         data-modal-alt="SpaceTeam Christmas Card with our machine in the lab"
+        data-original-src={spaceTeam1.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
       <Image
         src={spaceTeam2}
         alt="Rover!"
         class="company-image"
         data-modal-alt="Rover!"
+        data-original-src={spaceTeam2.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
       <Image
         src={spaceTeam3}
         alt="SpaceTeam workshop environment"
         class="company-image"
         data-modal-alt="SpaceTeam workshop environment"
+        data-original-src={spaceTeam3.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
     </div>
   </section>
@@ -147,6 +187,11 @@ import asasak1 from "../images/Asasak-1.jpg"
         alt="Unikie team during a break"
         class="company-image"
         data-modal-alt="Unikie team during a break"
+        data-original-src={unikie1.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
     </div>
   </section>
@@ -174,12 +219,22 @@ import asasak1 from "../images/Asasak-1.jpg"
         alt="Digital Colliers team in Zakopane"
         class="company-image"
         data-modal-alt="Digital Colliers team in Zakopane"
+        data-original-src={digitalColliers1.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
       <Image
         src={digitalColliers2}
         alt="Digital Colliers team in Hamburg"
         class="company-image"
         data-modal-alt="Digital Colliers team in Hamburg"
+        data-original-src={digitalColliers2.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
     </div>
   </section>
@@ -203,6 +258,11 @@ import asasak1 from "../images/Asasak-1.jpg"
         alt="Cabines delivered to a customer thanks to our software"
         class="company-image"
         data-modal-alt="Cabines delivered to a customer thanks to our software"
+        data-original-src={asasak1.src}
+        width={400}
+        height={200}
+        quality={85}
+        format="webp"
       />
     </div>
   </section>
@@ -284,6 +344,10 @@ import asasak1 from "../images/Asasak-1.jpg"
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s infinite;
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 
   .company-image.loaded {
@@ -389,8 +453,8 @@ import asasak1 from "../images/Asasak-1.jpg"
   }
 
   .modal-content img {
-    max-width: 100%;
-    max-height: 80vh;
+    max-width: 95%;
+    max-height: 90vh;
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -460,7 +524,7 @@ import asasak1 from "../images/Asasak-1.jpg"
     }
 
     .modal-content img {
-      max-height: 70vh;
+      max-height: 80vh;
     }
 
     .modal-close {
@@ -483,7 +547,7 @@ import asasak1 from "../images/Asasak-1.jpg"
     }
 
     .modal-content img {
-      max-height: 60vh;
+      max-height: 70vh;
     }
 
     .modal-close {
@@ -526,8 +590,9 @@ import asasak1 from "../images/Asasak-1.jpg"
         if (alt) {
           modal.classList.add("show")
 
-          // Use the already-loaded image data instead of making a new request
-          modalImg.src = this.src
+          // Use the original full-size image source
+          const originalSrc = this.getAttribute("data-original-src") || this.src
+          modalImg.src = originalSrc
           modalImg.alt = alt
           modalCaption.textContent = alt
 
