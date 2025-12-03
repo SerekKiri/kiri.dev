@@ -1,0 +1,204 @@
+---
+
+---
+
+<div class="projects">
+  <h2>PROJECTS</h2>
+
+  <section class="project-item">
+    <h3>
+      <a href="https://flarefact.ai/" target="_blank"><b>flarefact.ai</b></a>
+    </h3>
+    <p class="project-status">Available Now</p>
+    <p>
+      An AI-powered platform designed to help users verify facts and combat
+      misinformation while in the meantime building a community around it.
+      FlareFact leverages AI technology to provide real-time fact-checking and
+      verification services.
+    </p>
+    <a href="https://flarefact.ai/" target="_blank" class="visit-btn"
+      >Explore <span class="arrow">→</span></a
+    >
+  </section>
+
+  <section class="project-item">
+    <h3>
+      <a href="https://influinsider.pl/" target="_blank"
+        ><b>influinsider.pl</b></a
+      >
+    </h3>
+    <p class="project-status">Coming 2026</p>
+    <p>
+      A comprehensive platform for influencer marketing insights and analytics.
+      InfluInsider provides brands and marketers with powerful tools to
+      discover, analyze, and connect with influencers, making influencer
+      marketing more accessible and data-driven.
+    </p>
+    <a href="https://influinsider.pl/" target="_blank" class="visit-btn"
+      >Explore <span class="arrow">→</span></a
+    >
+  </section>
+
+  <section class="project-item">
+    <h3>
+      <a href="https://www.findadatespot.com/" target="_blank"
+        ><b>findadatespot.com</b></a
+      >
+    </h3>
+    <p class="project-status">Coming 2026</p>
+    <p>
+      Save your time and relationship by finding the perfect date spot!
+      FindADateSpot helps couples discover ideal locations for dates based on
+      preferences, location, and occasion. Whether you're planning a first date
+      or celebrating an anniversary, find the perfect spot effortlessly.
+    </p>
+    <a href="https://www.findadatespot.com/" target="_blank" class="visit-btn"
+      >Explore <span class="arrow">→</span></a
+    >
+  </section>
+</div>
+
+<style>
+  .projects {
+    margin: 48px 0 0 0;
+    width: 100%;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .project-item {
+    margin-bottom: 32px;
+    width: 100%;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .project-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(4px);
+  }
+
+  .project-item h3 {
+    margin-bottom: 8px;
+  }
+
+  .project-item h3 a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    font-family: monospace;
+    font-weight: normal;
+  }
+
+  .project-item h3 a:hover {
+    opacity: 0.8;
+  }
+
+  .project-status {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0.25em 0 1em 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .project-item p {
+    margin: 0 0 0.5em;
+    line-height: 1.6;
+  }
+
+  .project-item p:last-child {
+    margin-bottom: 0;
+  }
+
+  .visit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 8px 20px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visit-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  .visit-btn:hover::before {
+    left: 100%;
+  }
+
+  .visit-btn:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .visit-btn:active {
+    transform: translateY(0);
+  }
+
+  .arrow {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.1em;
+  }
+
+  .visit-btn:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 800px) {
+    .projects {
+      margin: 0;
+    }
+
+    .project-item {
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+  }
+</style>
