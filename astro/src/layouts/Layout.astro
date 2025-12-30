@@ -1,8 +1,12 @@
 ---
 import GoogleAnalytics from "../lib/GoogleAnalytics.astro"
+
+const birthYear = 2001
+const currentYear = new Date().getFullYear()
+const age = currentYear - birthYear
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +15,7 @@ import GoogleAnalytics from "../lib/GoogleAnalytics.astro"
     <title>Kacper Potyrała</title>
     <meta
       name="description"
-      content="22 years old software enginner based in Poland"
+      content={`${age} years old software enginner based in Poland`}
     />
     <meta property="og:title" content="Kacper Potyrała - Space Inside" />
     <meta property="og:image" content="https://kiri.dev/image.jpg" />
